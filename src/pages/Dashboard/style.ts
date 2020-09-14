@@ -61,6 +61,48 @@ export const Form = styled.form<FormProps>`
       background: ${shade(0.2, '#04d361')};
     }
   }
+    @media (max-width: 550px) {
+      max-width: 500;
+      display: flex;
+      flex-direction: column;
+
+      button {
+        width: 100%;
+        height: 50px;
+        background: #15c321;
+        border-radius: 5px;
+        border: 0;
+        color: #fff;
+        font-weight: bold;
+        transition: background-color 0.4s;
+
+      &:hover {
+        background: ${shade(0.2, '#04d361')};
+      }
+    }
+
+    input {
+      width: 100%;
+      
+      padding: 14px 14px;
+      border: 0;
+      border-radius: 5px;
+      color: #3a3a3a;
+      border: 2px solid #fff;
+      border-right: 0;
+      margin: 15px 0;
+
+      ${props =>
+        props.hasError &&
+        css`
+          border-color: #c53030;
+    `}  
+
+      &::placeholder {
+        color: #a8a8b3;
+      }
+  }
+
 `;
 
 export const Repositories = styled.div`
@@ -114,3 +156,5 @@ export const Repositories = styled.div`
     }
   }
 `;
+
+
